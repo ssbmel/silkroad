@@ -1,15 +1,14 @@
-import { Route, Routes } from "react-router-dom"
-import MainPage from "./pages/MainPage"
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "../src/pages/Home";
 
 function Router() {
-
-
-
   return (
-    <Routes>
-      <Route path="/" element={<MainPage />}/>
-    </Routes>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default Router
+export default Router;
