@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const StProfile = styled.div`
   width: 20%;
-  height: 250px;
+  height: 200px;
   border: 1px solid black;
 `;
 

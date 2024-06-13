@@ -12,6 +12,7 @@ const StLogin = styled.div`
   gap: 10px;
   cursor: pointer;
   margin-top: 50px;
+  align-items: center;
 `;
 const StProfile = styled.div`
   width: 30px;

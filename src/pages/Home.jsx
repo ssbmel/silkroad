@@ -6,13 +6,19 @@ import Layout from "../components/Layout";
 import Profile from "../components/Profile";
 import Navibar from "../components/Navibar";
 
+
 const Container = styled.div`
-  width: 80%;
+  width: 70%;
   min-height: 600px;
   display: flex;
   margin: 20px auto;
   gap: 60px;
   justify-content: center;
+`;
+const StLine = styled.div`  
+  width: 80%;
+  margin: 10px auto;
+  border-bottom: 1px solid #F4978E;
 `;
 
 
@@ -22,7 +28,7 @@ function MainPage() {
       <Layout />
       <Header />
       <Navibar />
-      <hr style={{width : "80%"}}/>
+      <StLine />
       <Container>
         <Calendar />
         <Contents />

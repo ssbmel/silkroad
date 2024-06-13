@@ -7,7 +7,8 @@ const StNavibar = styled.div`
 `;
 const StNavibarContent = styled.div`
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  color: #F4978E;
 `;
 
 function Navibar() {
