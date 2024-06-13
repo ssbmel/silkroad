@@ -5,7 +5,7 @@ const StSearchBox = styled.input`
   height: 25px;
   border: 1px solid black;
   border-radius: 15px;
-  margin: 10px 0;
+  margin: 20px 0;
 `;
 
 function Search() {

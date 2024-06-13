@@ -1,15 +1,16 @@
 import styled from "styled-components";
 import Search from "./Search";
 
-const StCalendar = styled.div`
-  width: 100%;
-  height: 200px;
-  border: 1px solid black;
-`;
 const StBodyLeft = styled.div`
   width: 20%;
   flex-direction: column;
   box-sizing: border-box;
+`;
+
+const StCalendar = styled.div`
+  width: 100%;
+  height: 200px;
+  border: 1px solid black;
 `;
 
 function Calendar() {

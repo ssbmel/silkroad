@@ -1,9 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const StLoginBox = styled.div`
-  width : 80%;
+  width : 1200px;
   height : 50px;
   margin : 10px auto;
+  display: flex;
 `;
 const StLogin = styled.div`
   width: 100%;
@@ -23,12 +25,22 @@ const StProfile = styled.div`
 `;
 
 function Layout() {
+  const navigate = useNavigate();
+  
+  const goToLogin = () => {
+    navigate('/Login');
+  }
+
+  const goToMyPage = () => {
+    navigate('/MyPage');
+  }
 
   return (
     <StLoginBox>
       <StLogin>
-      <StProfile />
-      로그인
+      <StProfile onClick={goToMyPage}/>
+      <p style={{color: "#F4978E"}}
+      onClick={goToLogin}>로그인</p>
       </StLogin>
     </StLoginBox>
   )

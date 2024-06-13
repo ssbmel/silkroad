@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import logo from "../img/logotitle.png";
+import Layout from "./Layout";
 
 function Header() {
 
@@ -13,7 +14,8 @@ const StTitle = styled.img`
 `;
   return (
     <>
-      <StTitle src={logo} alt={logo} />
+      <Layout />
+      <StTitle src={logo} alt={logo}/>
     </>
   );
 }
