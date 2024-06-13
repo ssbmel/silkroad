@@ -5,7 +5,7 @@ const StContainer = styled.div`
   width: 400px;
   height: auto;
   background-color: #FFEAE0;
-  margin: 300px auto;
+  margin: 200px auto;
   display: flex;
   border-radius: 15px;
 `;
