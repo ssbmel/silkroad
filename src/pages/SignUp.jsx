@@ -19,17 +19,17 @@ const StIdPwForm = styled.form`
   padding: 50px;
 `;
 const StIdInput = styled.input`
-  width: 200px;
+  width: 250px;
   height: 30px;
   border: none;
 `;
 const StPwInput = styled.input`
-  width: 200px;
+  width: 250px;
   height: 30px;
   border: none;
 `;
 const StNicknameInput = styled.input`
-  width: 200px;
+  width: 250px;
   height: 30px;
   border: none;
 `;
@@ -39,7 +39,7 @@ const StBtnBox = styled.div`
   margin-top: 20px;
 `;
 const StSignUpBtn = styled.button`
-  width: 210px;
+  width: 260px;
   height: 35px;
   background-color: #C0776F;
   color: white;
@@ -48,7 +48,7 @@ const StSignUpBtn = styled.button`
   cursor: pointer;
 `;
 const StBackBtn = styled.button`
-  width: 210px;
+  width: 260px;
   height: 35px;
   background-color: #FBC4AB;
   color: white;
