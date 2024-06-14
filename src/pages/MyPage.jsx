@@ -1,6 +1,10 @@
+import Header from "../header/Header"
+
 function MyPage() {
   return (
-    <div>MyPage</div>
+    <>
+      <Header />
+    </>
   )
 }
 

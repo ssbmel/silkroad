@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import profile from "../img/avatar.png"
 
 const StBodyRight = styled.div`
   width: 20%;
@@ -12,6 +13,9 @@ const StProfile = styled.div`
   height: 200px;
   border: 1px solid black;
   cursor: pointer;
+  background-image : url(${profile});
+  background-position: center;
+  background-size: 300px;
 `;
 
 const StWriteBtn = styled.div`

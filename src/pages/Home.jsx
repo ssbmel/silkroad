@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import Calendar from "../components/Calendar";
 import Contents from "../components/Contents";
-import Header from "../components/Header";
+import Header from "../header/Header";
 import Profile from "../components/Profile";
-import Navibar from "../components/Navibar";
 
 
 const Container = styled.div`
@@ -15,19 +14,11 @@ const Container = styled.div`
   gap: 40px;
   justify-content: center;
 `;
-const StLine = styled.div`  
-  width: 1400px;
-  margin: 20px auto 50px auto;
-  border-bottom: 1px solid #F4978E;
-`;
-
 
 function MainPage() {
   return (
     <>
       <Header />
-      <Navibar />
-      <StLine />
       <Container>
         <Profile />
         <Contents />

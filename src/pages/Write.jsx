@@ -1,7 +1,10 @@
+import Header from "../header/Header"
 
 function Write() {
   return (
-    <div>Write</div>
+    <>
+      <Header />
+    </>
   )
 }
 
