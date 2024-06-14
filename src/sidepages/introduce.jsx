@@ -1,7 +1,7 @@
-function introduce() {
+function Introduce() {
   return (
     <div>introduce</div>
   )
 }
 
-export default introduce
+export default Introduce

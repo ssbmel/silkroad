@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import profile from "../img/avatar.png"
+import profile from "../img/profileavatar.png"
 
 const StBodyRight = styled.div`
   width: 20%;
