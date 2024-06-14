@@ -1,24 +1,27 @@
 import styled from "styled-components";
 
 const StContentsBox = styled.div`
-  width: 60%;
-  height: 800px;
+  width: 80%;
+  height: auto;
+  min-height: 800px;
   border: 1px solid black;
-  max-width: 1000px;
+  max-width: 1400px;
+  min-width: 800px;
+  padding: 2%;
+  margin: 0 10px;
 `;
 const StClubImgBox = styled.div`
-  width : 90%;
-  height: 40%;
+  width : 100%;
+  height: 300px;
   border: 1px solid black;
-  margin: 30px auto;
-
+  margin-bottom: 30px;
 `;
 
 const StNewContentsBox = styled.div`
-  width : 90%;
-  height: 40%;
+  width : 100%;
+  height: auto;
+  min-height: 600px;
   border: 1px solid black;
-  margin: 30px auto;
 `;
 
 function Contents() {

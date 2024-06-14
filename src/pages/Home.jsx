@@ -9,15 +9,15 @@ import Navibar from "../components/Navibar";
 const Container = styled.div`
   width: 70%;
   min-width: 800px;
-  max-width: 1200px;
+  max-width: 1400px;
   display: flex;
   margin: 20px auto;
-  gap: 60px;
+  gap: 40px;
   justify-content: center;
 `;
 const StLine = styled.div`  
-  width: 1200px;
-  margin: 30px auto 50px auto;
+  width: 1400px;
+  margin: 20px auto 50px auto;
   border-bottom: 1px solid #F4978E;
 `;
 
@@ -29,9 +29,9 @@ function MainPage() {
       <Navibar />
       <StLine />
       <Container>
-        <Calendar />
-        <Contents />
         <Profile />
+        <Contents />
+        <Calendar />
       </Container>
     </>
   );

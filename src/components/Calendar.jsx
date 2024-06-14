@@ -3,6 +3,7 @@ import Search from "./Search";
 
 const StBodyLeft = styled.div`
   width: 20%;
+  min-width: 200px;
   flex-direction: column;
   box-sizing: border-box;
 `;

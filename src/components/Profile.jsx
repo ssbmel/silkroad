@@ -1,18 +1,22 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-const StProfile = styled.div`
-  width: 100%;
-  height: 200px;
-  border: 1px solid black;
-`;
 const StBodyRight = styled.div`
   width: 20%;
+  min-width: 200px;
   flex-direction: column;
   box-sizing: border-box;
 `;
+
+const StProfile = styled.div`
+  height: 200px;
+  border: 1px solid black;
+  cursor: pointer;
+`;
+
 const StWriteBtn = styled.div`
   width: 100%;
+  min-width: 200px;
   height: 40px;
   margin: 10px 0;
   padding: 10px 0;
@@ -26,12 +30,17 @@ const StWriteBtn = styled.div`
 function Profile() {
   const navigate = useNavigate();
 
+  const goToMyPage = () => {
+    navigate('/MyPage')
+  }
+
   const goToWrite = () => {
     navigate('/Write')
   }
   return (
     <StBodyRight>
-      <StProfile>Profile</StProfile>
+      <StProfile
+      onClick={goToMyPage}></StProfile>
       <StWriteBtn
       onClick={goToWrite}>글쓰기</StWriteBtn>
     </StBodyRight>
