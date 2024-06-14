@@ -4,7 +4,7 @@ const StContentsBox = styled.div`
   width: 80%;
   height: auto;
   min-height: 800px;
-  border: 1px solid black;
+  border: 1px solid #F4978E;
   max-width: 1400px;
   min-width: 800px;
   padding: 2%;
@@ -13,7 +13,7 @@ const StContentsBox = styled.div`
 const StClubImgBox = styled.div`
   width : 100%;
   height: 300px;
-  border: 1px solid black;
+  border: 1px solid #F4978E;
   margin-bottom: 30px;
 `;
 
@@ -21,7 +21,7 @@ const StNewContentsBox = styled.div`
   width : 100%;
   height: auto;
   min-height: 600px;
-  border: 1px solid black;
+  border: 1px solid #F4978E;
 `;
 
 function Contents() {

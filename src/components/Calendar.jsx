@@ -11,7 +11,7 @@ const StBodyLeft = styled.div`
 const StCalendar = styled.div`
   width: 100%;
   height: 200px;
-  border: 1px solid black;
+  border: 1px solid #F4978E;
 `;
 
 function Calendar() {

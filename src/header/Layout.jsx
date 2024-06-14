@@ -27,7 +27,7 @@ function Layout() {
     <StLoginBox>
       <StLogin>
       <p style={{color: "#F4978E"}}
-      onClick={goToLogin}>로그인</p>
+      onClick={goToLogin}>로그인/회원가입</p>
       </StLogin>
     </StLoginBox>
   )

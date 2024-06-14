@@ -11,7 +11,7 @@ const StBodyRight = styled.div`
 
 const StProfile = styled.div`
   height: 200px;
-  border: 1px solid black;
+  border: 1px solid #F4978E;
   cursor: pointer;
   background-image : url(${profile});
   background-position: center;
