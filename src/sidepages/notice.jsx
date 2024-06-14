@@ -1,6 +1,11 @@
+import Header from "../header/Header"
+
 function Notice() {
   return (
-    <div>notice</div>
+    <>
+      <Header />
+      <div>공지</div>
+    </>
   )
 }
 

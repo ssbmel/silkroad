@@ -1,6 +1,11 @@
+import Header from "../header/Header"
+
 function Information() {
   return (
-    <div>information</div>
+    <>
+      <Header />
+      <div>정보모음</div>
+    </>
   )
 }
 

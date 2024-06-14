@@ -45,6 +45,23 @@ function Header() {
   const goToMain = () => {
     navigate('/');
   }
+
+  const goToIntroduce = () => {
+    navigate('/introduce');
+  }
+
+  const goToAlbum = () => {
+    navigate('/album');
+  }
+
+  const goToInformation = () => {
+    navigate('/information');
+  }
+
+  const goToNotice = () => {
+    navigate('/notice');
+  }
+
   return (
     <>
       <Layout />
@@ -53,10 +70,10 @@ function Header() {
         <StTitleText>Silk Road</StTitleText>
       </StTitleWrapper>
       <StNavibar>
-        <StNavibarContent>사이트 소개</StNavibarContent>
-        <StNavibarContent>앨범</StNavibarContent>
-        <StNavibarContent>정보모음</StNavibarContent>
-        <StNavibarContent>공지사항</StNavibarContent>
+        <StNavibarContent onClick={goToIntroduce}>사이트 소개</StNavibarContent>
+        <StNavibarContent onClick={goToAlbum}>앨범</StNavibarContent>
+        <StNavibarContent onClick={goToInformation}>정보모음</StNavibarContent>
+        <StNavibarContent onClick={goToNotice}>공지사항</StNavibarContent>
       </StNavibar>
       <StLine />
     </>

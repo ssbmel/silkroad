@@ -4,6 +4,7 @@ function Album() {
   return (
     <>
       <Header />
+      <div>앨범</div>
     </>
   )
 }

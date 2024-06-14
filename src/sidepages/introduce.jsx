@@ -1,6 +1,11 @@
+import Header from "../header/Header"
+
 function Introduce() {
   return (
-    <div>introduce</div>
+    <>
+      <Header />
+      <div>소개글</div>
+    </>
   )
 }
 
