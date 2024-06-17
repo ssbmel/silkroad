@@ -39,7 +39,7 @@ const StBtnBox = styled.div`
   margin-top: 20px;
 `;
 const StSignUpBtn = styled.button`
-  width: 260px;
+  width: 250px;
   height: 35px;
   background-color: #C0776F;
   color: white;
@@ -48,7 +48,7 @@ const StSignUpBtn = styled.button`
   cursor: pointer;
 `;
 const StBackBtn = styled.button`
-  width: 260px;
+  width: 250px;
   height: 35px;
   background-color: #FBC4AB;
   color: white;

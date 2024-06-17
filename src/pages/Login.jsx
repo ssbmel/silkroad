@@ -21,11 +21,13 @@ const StIdInput = styled.input`
   width: 250px;
   height: 30px;
   border: none;
+  box-sizing: border-box;
 `;
 const StPwInput = styled.input`
   width: 250px;
   height: 30px;
   border: none;
+  box-sizing: border-box;
 `;
 const StBtnBox = styled.div`
   width: 200px;
@@ -33,7 +35,7 @@ const StBtnBox = styled.div`
   margin-top: 20px;
 `;
 const StLoginBtn = styled.button`
-  width: 260px;
+  width: 250px;
   height: 35px;
   background-color: #C0776F;
   color: white;
@@ -42,7 +44,7 @@ const StLoginBtn = styled.button`
   cursor: pointer;
 `;
 const StSignUpBtn = styled.button`
-  width: 260px;
+  width: 250px;
   height: 35px;
   background-color: #FBC4AB;
   color: white;
@@ -59,10 +61,6 @@ const StLoginTitle = styled.h1`
 
 function Login() {
   const navigate = useNavigate();
-
-  // const goToLogin = () => {
-  //   navigate('/Login');
-  // }
 
   const goToSignUp = () => {
     navigate('/SignUp');

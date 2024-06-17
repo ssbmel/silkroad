@@ -1,14 +1,11 @@
 import styled from "styled-components";
 
 const StContentsBox = styled.div`
-  width: 80%;
+  width: 70%;
   height: auto;
   min-height: 800px;
-  border: 1px solid #F4978E;
   max-width: 1400px;
   min-width: 800px;
-  padding: 2%;
-  margin: 0 10px;
 `;
 const StClubImgBox = styled.div`
   width : 100%;
