@@ -1,9 +1,11 @@
+import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components"
+import supabase from "../supabase/supabaseClient";
 
 const StContainer = styled.div`
   width: 400px;
-  height: 500px;
+  height: 600px;
   background-color: #FFEAE0;
   margin: 200px auto;
   display: flex;
@@ -61,18 +63,32 @@ const StLoginTitle = styled.h1`
 
 function Login() {
   const navigate = useNavigate();
+  const idRef = useRef(null);
+  const passwordRef = useRef(null);
 
   const goToSignUp = () => {
     navigate('/SignUp');
   }
 
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: idRef.current.value,
+      password: passwordRef.current.value,
+    })
+    if(error) {
+      throw error;
+    }
+    console.log(data)
+  }
+
   return (
     <>
       <StContainer>
-        <StIdPwForm>
+        <StIdPwForm onSubmit={handleLogin}>
           <StLoginTitle>로그인</StLoginTitle>
-          <StIdInput placeholder="아이디를 입력하세요."/>
-          <StPwInput placeholder="비밀번호를 입력하세요."/>
+          <StIdInput placeholder="아이디를 입력하세요." ref={idRef}/>
+          <StPwInput placeholder="비밀번호를 입력하세요." ref={passwordRef}/>
           <StBtnBox>
             <StLoginBtn>로그인</StLoginBtn>
             <StSignUpBtn 

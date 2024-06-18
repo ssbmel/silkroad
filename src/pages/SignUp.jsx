@@ -1,9 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components"
+import supabase from "../supabase/supabaseClient";
+import { useRef } from "react";
 
 const StContainer = styled.div`
   width: 400px;
-  height: auto;
+  height: 600px;
   background-color: #FFEAE0;
   margin: 200px auto;
   display: flex;
@@ -65,6 +67,8 @@ const StLoginTitle = styled.h1`
 
 function SignUp() {
   const navigate = useNavigate();
+  const emailRef = useRef(null);
+  const passwordRef = useRef(null);
 
   // const goToLogin = () => {
   //   navigate('/Login');
@@ -74,17 +78,31 @@ function SignUp() {
     navigate('/Login');
   }
 
+  const handleSignUp = async (e) => {
+    e.preventDefault();
+    const {data, error} = await supabase.auth.signUp({
+      email : emailRef.current.value,
+      password : passwordRef.current.value,
+    });
+
+    if(error) {
+      throw error;
+    }
+
+    console.log(data);
+  }
+
   return (
     <>
       <StContainer>
-        <StIdPwForm>
+        <StIdPwForm onSubmit={handleSignUp}>
           <StLoginTitle>회원가입</StLoginTitle>
-          <StIdInput placeholder="@email.com"/>
-          <StPwInput type="password" placeholder="비밀번호를 입력하세요."/>
-          <StPwInput type="password" placeholder="비밀번호를 다시 입력하세요."/>
+          <StIdInput placeholder="@email.com" ref={emailRef}/>
+          <StPwInput type="password" placeholder="비밀번호를 입력하세요." ref={passwordRef}/>
           <StNicknameInput placeholder="닉네임을 입력하세요."/>
           <StBtnBox>
-            <StSignUpBtn>가입하기</StSignUpBtn>
+            <StSignUpBtn
+            >가입하기</StSignUpBtn>
             <StBackBtn
             onClick={goToLogin}>뒤로가기</StBackBtn>
           </StBtnBox>
