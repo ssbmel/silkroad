@@ -1,12 +1,12 @@
 import { useNavigate } from "react-router-dom";
-import styled from "styled-components"
+import styled from "styled-components";
 import supabase from "../supabase/supabaseClient";
 import { useRef } from "react";
 
 const StContainer = styled.div`
   width: 400px;
   height: 600px;
-  background-color: #FFEAE0;
+  background-color: #ffeae0;
   margin: 200px auto;
   display: flex;
   border-radius: 15px;
@@ -43,7 +43,7 @@ const StBtnBox = styled.div`
 const StSignUpBtn = styled.button`
   width: 250px;
   height: 35px;
-  background-color: #C0776F;
+  background-color: #c0776f;
   color: white;
   border: none;
   margin-top: 5px;
@@ -52,7 +52,7 @@ const StSignUpBtn = styled.button`
 const StBackBtn = styled.button`
   width: 250px;
   height: 35px;
-  background-color: #FBC4AB;
+  background-color: #fbc4ab;
   color: white;
   border: none;
   margin-top: 5px;
@@ -69,47 +69,61 @@ function SignUp() {
   const navigate = useNavigate();
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
+  const nicknameRef = useRef(null);
 
   // const goToLogin = () => {
   //   navigate('/Login');
   // }
 
   const goToLogin = () => {
-    navigate('/Login');
-  }
+    navigate("/Login");
+  };
 
   const handleSignUp = async (e) => {
     e.preventDefault();
-    const {data, error} = await supabase.auth.signUp({
-      email : emailRef.current.value,
-      password : passwordRef.current.value,
+    const { data, error } = await supabase.auth.signUp({
+      email: emailRef.current.value,
+      password: passwordRef.current.value,
+      nickname: nicknameRef.current.value,
     });
 
-    if(error) {
+    if (error) {
       throw error;
     }
 
     console.log(data);
-  }
+
+    const { data: user } = await supabase.from("user_table").insert({
+      id: data.user.id,
+      created_at: data.user.created_at,
+      email: data.user.email,
+      nickname: nicknameRef.current.value,
+    });
+  };
 
   return (
     <>
       <StContainer>
         <StIdPwForm onSubmit={handleSignUp}>
           <StLoginTitle>회원가입</StLoginTitle>
-          <StIdInput placeholder="@email.com" ref={emailRef}/>
-          <StPwInput type="password" placeholder="비밀번호를 입력하세요." ref={passwordRef}/>
-          <StNicknameInput placeholder="닉네임을 입력하세요."/>
+          <StIdInput placeholder="@email.com" ref={emailRef} />
+          <StPwInput
+            type="password"
+            placeholder="비밀번호를 입력하세요."
+            ref={passwordRef}
+          />
+          <StNicknameInput
+            placeholder="닉네임을 입력하세요."
+            ref={nicknameRef}
+          />
           <StBtnBox>
-            <StSignUpBtn
-            >가입하기</StSignUpBtn>
-            <StBackBtn
-            onClick={goToLogin}>뒤로가기</StBackBtn>
+            <StSignUpBtn>가입하기</StSignUpBtn>
+            <StBackBtn onClick={goToLogin}>뒤로가기</StBackBtn>
           </StBtnBox>
         </StIdPwForm>
       </StContainer>
     </>
-  )
+  );
 }
 
-export default SignUp
+export default SignUp;
