@@ -1,5 +1,32 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+
+
+
+function Layout() {
+  const navigate = useNavigate();
+
+
+  useEffect(()=>{
+    const token = localStorage.getItem('accessToken');
+    console.log(token);
+  },[]);
+  
+  const goToLogin = () => {
+    navigate('/Login');
+  }
+
+  return (
+    <StLoginBox>
+      <StLogin>
+      <p onClick={goToLogin}>로그인/회원가입</p>
+      </StLogin>
+    </StLoginBox>
+  )
+}
+
+export default Layout;
 
 const StLoginBox = styled.div`
   width : 1400px;
@@ -14,23 +41,5 @@ const StLogin = styled.div`
   cursor: pointer;
   margin-top: 50px;
   align-items: center;
+  color: #F4978E;
 `;
-
-function Layout() {
-  const navigate = useNavigate();
-  
-  const goToLogin = () => {
-    navigate('/Login');
-  }
-
-  return (
-    <StLoginBox>
-      <StLogin>
-      <p style={{color: "#F4978E"}}
-      onClick={goToLogin}>로그인/회원가입</p>
-      </StLogin>
-    </StLoginBox>
-  )
-}
-
-export default Layout

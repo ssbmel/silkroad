@@ -3,6 +3,69 @@ import styled from "styled-components";
 import supabase from "../supabase/supabaseClient";
 import { useRef } from "react";
 
+
+
+function SignUp() {
+  const navigate = useNavigate();
+  const emailRef = useRef(null);
+  const passwordRef = useRef(null);
+  const nicknameRef = useRef(null);
+
+  const goToLogin = () => {
+    navigate("/Login");
+  };
+
+  const handleSignUp = async (e) => {
+    e.preventDefault();
+    const { data, error } = await supabase.auth.signUp({
+      email: emailRef.current.value,
+      password: passwordRef.current.value,
+      nickname: nicknameRef.current.value,
+    });
+
+    if (error) {
+      alert('아이디와 비밀번호를 확인해주세요.');
+      throw error;
+    } alert('회원가입 성공!');
+      navigate('/Login');
+
+    console.log(data);
+
+    const { data: user } = await supabase.from("user_table").insert({
+      id: data.user.id,
+      created_at: data.user.created_at,
+      email: data.user.email,
+      nickname: nicknameRef.current.value,
+    });
+  };
+
+  return (
+    <>
+      <StContainer>
+        <StIdPwForm onSubmit={handleSignUp}>
+          <StLoginTitle>회원가입</StLoginTitle>
+          <StIdInput placeholder="@email.com" ref={emailRef} />
+          <StPwInput
+            type="password"
+            placeholder="비밀번호를 입력하세요."
+            ref={passwordRef}
+          />
+          <StNicknameInput
+            placeholder="닉네임을 입력하세요."
+            ref={nicknameRef}
+          />
+          <StBtnBox>
+            <StSignUpBtn>가입하기</StSignUpBtn>
+            <StBackBtn onClick={goToLogin}>뒤로가기</StBackBtn>
+          </StBtnBox>
+        </StIdPwForm>
+      </StContainer>
+    </>
+  );
+}
+
+export default SignUp;
+
 const StContainer = styled.div`
   width: 400px;
   height: 600px;
@@ -64,66 +127,3 @@ const StLoginTitle = styled.h1`
   margin-bottom: 30px;
   color: black;
 `;
-
-function SignUp() {
-  const navigate = useNavigate();
-  const emailRef = useRef(null);
-  const passwordRef = useRef(null);
-  const nicknameRef = useRef(null);
-
-  // const goToLogin = () => {
-  //   navigate('/Login');
-  // }
-
-  const goToLogin = () => {
-    navigate("/Login");
-  };
-
-  const handleSignUp = async (e) => {
-    e.preventDefault();
-    const { data, error } = await supabase.auth.signUp({
-      email: emailRef.current.value,
-      password: passwordRef.current.value,
-      nickname: nicknameRef.current.value,
-    });
-
-    if (error) {
-      throw error;
-    }
-
-    console.log(data);
-
-    const { data: user } = await supabase.from("user_table").insert({
-      id: data.user.id,
-      created_at: data.user.created_at,
-      email: data.user.email,
-      nickname: nicknameRef.current.value,
-    });
-  };
-
-  return (
-    <>
-      <StContainer>
-        <StIdPwForm onSubmit={handleSignUp}>
-          <StLoginTitle>회원가입</StLoginTitle>
-          <StIdInput placeholder="@email.com" ref={emailRef} />
-          <StPwInput
-            type="password"
-            placeholder="비밀번호를 입력하세요."
-            ref={passwordRef}
-          />
-          <StNicknameInput
-            placeholder="닉네임을 입력하세요."
-            ref={nicknameRef}
-          />
-          <StBtnBox>
-            <StSignUpBtn>가입하기</StSignUpBtn>
-            <StBackBtn onClick={goToLogin}>뒤로가기</StBackBtn>
-          </StBtnBox>
-        </StIdPwForm>
-      </StContainer>
-    </>
-  );
-}
-
-export default SignUp;
